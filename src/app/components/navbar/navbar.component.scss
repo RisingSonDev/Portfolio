@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1e1e2f;
+  padding: 2rem;
+}
+
+.logo-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.logo-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle-text a {
+  fill: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: fill 0.3s;
+}
+
+.circle-text a:hover {
+  fill: #4CAF50;
+}
+.flipped-vertical {
+  transform: scaleY(-1);
+}
+.flipped-horizontal {
+  transform: scaleX(-1);
+}
+
