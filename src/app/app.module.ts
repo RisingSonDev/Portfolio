@@ -24,24 +24,23 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule, // ✅ for ngModel in your contact form
+    FormsModule,
     AppRoutingModule,
 
     // ✅ Firebase initialization
     provideFirebaseApp(() => initializeApp({
-  apiKey: "AIzaSyDjeh9mvU98sqXqbMwyas4hhyL4Lbdq1Bs",
-  authDomain: "risingsondevportfolio.firebaseapp.com",
-  databaseURL: "https://risingsondevportfolio-default-rtdb.firebaseio.com",
-  projectId: "risingsondevportfolio",
-  storageBucket: "risingsondevportfolio.firebasestorage.app",
-  messagingSenderId: "696830543225",
-  appId: "1:696830543225:web:d4a8c03f3de6b8768a9ba8",
-  measurementId: "G-P2XSJLVWRF"
-})),
+      apiKey: "AIzaSyDjeh9mvU98sqXqbMwyas4hhyL4Lbdq1Bs",
+      authDomain: "risingsondevportfolio.firebaseapp.com",
+      databaseURL: "https://risingsondevportfolio-default-rtdb.firebaseio.com",
+      projectId: "risingsondevportfolio",
+      storageBucket: "risingsondevportfolio.appspot.com", // ✅ FIXED
+      messagingSenderId: "696830543225",
+      appId: "1:696830543225:web:d4a8c03f3de6b8768a9ba8",
+      measurementId: "G-P2XSJLVWRF"
+    })),
 
-    // ✅ Cloud Functions
+    // ✅ Cloud Functions (us-central1 region)
     provideFunctions(() => getFunctions(undefined, 'us-central1'))
-
   ],
   providers: [],
   bootstrap: [AppComponent]
