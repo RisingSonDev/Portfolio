@@ -1,6 +1,7 @@
 <section class="contact">
   <h1>Get in Touch</h1>
-  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+
+  <form #contactForm="ngForm">
     <label for="name">Your Name</label>
     <input id="name" type="text" name="name" ngModel required>
 
@@ -10,9 +11,14 @@
     <label for="message">Message</label>
     <textarea id="message" name="message" ngModel rows="5" required></textarea>
 
-    <button type="submit">Send Message</button>
+    <!-- Send Email button (calls prepareMailto to build link) -->
+    <a
+      id="sendButton"
+      [href]="mailtoLink"
+      class="send-btn"
+      (click)="prepareMailto(contactForm)"
+    >
+      Send Email
+    </a>
   </form>
-
-  <p *ngIf="sent" class="success">✅ Your message has been sent!</p>
-  <p *ngIf="error" class="error">❌ Something went wrong. Please try again.</p>
 </section>

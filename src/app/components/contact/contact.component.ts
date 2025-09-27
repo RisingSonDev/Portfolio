@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Functions, httpsCallable } from '@angular/fire/functions';
 
 @Component({
   selector: 'app-contact',
@@ -8,28 +7,18 @@ import { Functions, httpsCallable } from '@angular/fire/functions';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  sent = false;
-  error = false;
+  mailtoLink: string = 'mailto:risingsondev@gmail.com';
 
-  constructor(private functions: Functions) {}
-
-  async onSubmit(form: NgForm) {
+  prepareMailto(form: NgForm) {
     if (!form.valid) return;
 
     const { name, email, message } = form.value;
-    const sendContactEmail = httpsCallable(this.functions, 'sendContactEmail');
 
-    try {
-      await sendContactEmail({ name, email, message });
-      this.sent = true;
-      this.error = false;
-      form.resetForm(); // clear the form after success
-    } catch (err) {
-      console.error('Error sending contact form:', err);
-      this.error = true;
-      this.sent = false;
-    }
+    const subject = encodeURIComponent(`New Portfolio Contact from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    this.mailtoLink = `mailto:risingsondev@gmail.com?subject=${subject}&body=${body}`;
   }
 }
-
-
