@@ -40,7 +40,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 })),
 
     // ✅ Cloud Functions
-    provideFunctions(() => getFunctions())
+    provideFunctions(() => getFunctions(undefined, 'us-central1'))
+
   ],
   providers: [],
   bootstrap: [AppComponent]
