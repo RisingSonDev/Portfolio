@@ -1,33 +1,32 @@
-import * as functions from "firebase-functions";
+import { onCall } from "firebase-functions/v2/https";
+import { defineString } from "firebase-functions/params";
 import * as nodemailer from "nodemailer";
 
-// Configure the transporter using Firebase environment variables
+// ✅ Define secure parameters (you'll set these in Firebase CLI)
+const gmailUser = defineString("GMAIL_USER");
+const gmailPass = defineString("GMAIL_PASS");
+
+// ✅ Configure Nodemailer transporter with Gmail
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: functions.config().gmail.user, // set with firebase functions:config:set
-    pass: functions.config().gmail.pass
+    user: gmailUser.value(),
+    pass: gmailPass.value()
   }
 });
 
-/**
- * Callable function to send an email from the portfolio contact form
- * Triggered by Angular frontend using httpsCallable
- */
-export const sendContactEmail = functions.https.onCall(async (request, context) => {
+// ✅ Cloud Function (called from Angular contact form)
+export const sendContactEmail = onCall(async (request) => {
   const { name, email, message } = request.data;
 
   if (!name || !email || !message) {
-    throw new functions.https.HttpsError(
-      "invalid-argument",
-      "Missing required fields"
-    );
+    throw new Error("Missing required fields");
   }
 
   const mailOptions = {
     from: `"${name}" <${email}>`,
-    to: functions.config().gmail.user, // your own inbox
-    subject: `New Portfolio Contact: ${name}`,
+    to: gmailUser.value(), // your inbox
+    subject: `New Portfolio Contact from ${name}`,
     text: `
       You received a new message from your portfolio contact form.
 
@@ -43,10 +42,6 @@ export const sendContactEmail = functions.https.onCall(async (request, context) 
     return { success: true };
   } catch (error) {
     console.error("Error sending email:", error);
-    throw new functions.https.HttpsError(
-      "internal",
-      "Unable to send email",
-      error
-    );
+    throw new Error("Unable to send email");
   }
 });
