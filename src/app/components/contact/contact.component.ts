@@ -12,11 +12,11 @@ export class ContactComponent {
   prepareMailto(form: NgForm) {
     if (!form.valid) return;
 
-    const { name, email, message } = form.value;
+    const { name, message } = form.value;
 
     const subject = encodeURIComponent(`New Portfolio Contact from ${name}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+      `Name: $\n${message}`
     );
 
     this.mailtoLink = `mailto:risingsondev@gmail.com?subject=${subject}&body=${body}`;
