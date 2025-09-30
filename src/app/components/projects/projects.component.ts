@@ -10,9 +10,9 @@ export class ProjectsComponent {
     {
       title: 'Guitar E-Commerce',
       description: 'An Angular + Firebase shop with cart, admin panel, and live database.',
-      image: 'assets/projects/guitar.png',
-      link: 'https://your-live-site.com',
-      github: 'https://github.com/your-username/guitar-shop'
+      image: 'assets/projectImgs/guitar.png',
+      link: 'risingsondevguitarshop.web.app',
+      github: 'https://github.com/RisingSonDev/GuitarShop'
     },
     {
       title: 'Unity 2D Platformer',
