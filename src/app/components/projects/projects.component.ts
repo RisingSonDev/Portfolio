@@ -11,7 +11,7 @@ export class ProjectsComponent {
       title: 'Guitar E-Commerce',
       description: 'An Angular + Firebase shop with cart, admin panel, and live database.',
       image: 'assets/projectImgs/guitar.png',
-      link: 'risingsondevguitarshop.web.app',
+      link: 'https://risingsondevguitarshop.web.app',
       github: 'https://github.com/RisingSonDev/GuitarShop'
     },
     {
