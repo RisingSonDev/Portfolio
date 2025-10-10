@@ -1,0 +1,22 @@
+.site-footer {
+ // deep dark gray or black
+  color: solid black; // soft light gray text
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    p {
+      margin: 0.4rem 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+    padding: 1.2rem 0.5rem;
+  }
+}

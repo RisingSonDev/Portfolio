@@ -13,6 +13,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PixelateRevealComponent } from './shared/pixelate-reveal/pixelate-reveal.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { PixelateRevealComponent } from './shared/pixelate-reveal/pixelate-revea
     ContactComponent,
     NavbarComponent,
     PixelateRevealComponent,
+    FooterComponent,
 
   ],
   imports: [

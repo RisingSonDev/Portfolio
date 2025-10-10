@@ -15,8 +15,8 @@ export class ProjectsComponent {
       github: 'https://github.com/RisingSonDev/GuitarShop'
     },
     {
-      title: 'Unity 2D Platformer',
-      description: 'A magical platformer game built for my daughter with C# and Unity.',
+      title: 'Demo Site',
+      description: 'A demo for prospective clients of the control of their own web-app',
       image: 'assets/projects/platformer.png',
       link: '',
       github: 'https://github.com/your-username/platformer'
