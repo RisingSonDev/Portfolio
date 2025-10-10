@@ -1,9 +1,13 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.5;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.6;
   overflow-x: hidden; // prevent sideways scroll on small screens
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #b6eedb 0%, #405352 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 * {

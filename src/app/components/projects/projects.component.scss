@@ -1,7 +1,7 @@
 .projects {
   text-align: center;
   padding: 3rem 1rem;
-  background: #f9f9f9;
+  
 
   h1 {
     font-size: 2.2rem;
@@ -24,7 +24,7 @@
   }
 
   .project-card {
-    background: #fff;
+    background: #ffffffbb;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -62,7 +62,7 @@
 
       a {
         text-decoration: none;
-        background: #4CAF50;
+        background: #db8719;
         color: #fff;
         padding: 0.6rem 1.2rem;
         border-radius: 8px;
@@ -70,7 +70,7 @@
         transition: 0.3s;
 
         &:hover {
-          background: #45a049;
+          background: #a56506;
         }
 
         &:nth-child(2) {

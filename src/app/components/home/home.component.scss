@@ -1,11 +1,39 @@
 .hero {
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
 
+.hero-buttons{
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding-bottom: 20px;
+
+      a {
+        text-decoration: none;
+        background: #db8719;
+        color: #fff;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s;
+
+        &:hover {
+          background: #a56506;
+        }
+
+        &:nth-child(2) {
+          background: #424141;
+
+          &:hover {
+            background: #000;
+          }
+        }
+      }
+    }
   h1 {
     font-size: 2.5rem;
   }

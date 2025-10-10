@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1e1e2f;
   padding: 2rem;
 }
 
@@ -36,10 +35,12 @@
   text-decoration: none;
   font-weight: bold;
   transition: fill 0.3s;
+ text-shadow: 1px 1px 1px goldenrod ,0 0 3px rgb(231, 147, 20);
 }
 
 .circle-text a:hover {
-  fill: #4CAF50;
+  fill: #aa4314;
 }
+
 
 
