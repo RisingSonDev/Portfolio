@@ -1,0 +1,16 @@
+<ng-container *ngIf="alive">
+  <div
+    class="pixelate-overlay"
+    [style.setProperty]="'--rows'" [style.setProperty]="'--cols'"
+    [style.--rows]="rows" [style.--cols]="cols"
+    [style.--dur.ms]="duration"
+    [style.--color]="color"
+  >
+    <div
+      class="tile"
+      *ngFor="let c of cells; index as i; "
+      [style.animationDelay.ms]="c.delay"
+    ></div>
+  </div>
+</ng-container>
+<!-- (Angular will ignore this <script> block; alternatively move trackByIndex into TS) -->

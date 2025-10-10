@@ -12,6 +12,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PixelateRevealComponent } from './shared/pixelate-reveal/pixelate-reveal.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
-    NavbarComponent
+    NavbarComponent,
+    PixelateRevealComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,37 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none; // overlay shouldn't block clicks after it fades
+}
+
+/* CSS custom props from host:
+   --rows, --cols, --dur, --color
+*/
+.pixelate-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: repeat(var(--rows, 18), 1fr);
+  grid-template-columns: repeat(var(--cols, 10), 1fr);
+  background: transparent; // the tiles themselves provide the cover
+}
+
+.tile {
+  background: var(--color, #000);
+  transform: scale(1);
+  opacity: 1;
+  will-change: opacity, transform;
+  animation: pixel-fade var(--dur, 1200ms) ease-out forwards;
+}
+
+@keyframes pixel-fade {
+  0%   { opacity: 1; transform: scale(1); }
+  75%  { opacity: 0.18; transform: scale(0.94); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+/* Optional: tiny safety for super small screens */
+@media (max-width: 380px) {
+  :host { z-index: 9999; }
+}
